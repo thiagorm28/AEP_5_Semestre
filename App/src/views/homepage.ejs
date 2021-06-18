@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html style="background-color: #0a4261;">
+<head>
+   
+    <title>
+        Boletim Virtual
+    </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content= "IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto2:wght@100;300&display=swap');
+         body{
+            font-family: 'Roboto2';
+            background-color:rgb(56, 56, 56);
+        }
+        .cabecalho{
+            padding-right: 20px;
+            background-color: #0a4261;
+            box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+            padding-left:25px;
+            position: fixed;
+            width: 100%;
+            height: 75px;
+        }
+        .container-boletim {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            align-content: stretch;
+            padding-top: 100px;
+        }
+        .content-center {
+            box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        .content-center-barra {
+            box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+            color: rgb(255, 248, 248);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            align-content: space-between;
+        }
+        .content-center-no-shadow {
+            color: rgb(255, 248, 248);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        .hover {
+            cursor: pointer;
+        }
+        .content-right{
+            box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items:center;
+            align-content:center;
+        }
+    </style>
+    <body>
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <div class="cabecalho content-right">
+            <img src="/images/logo.png" height="50" class="hover" onclick="location.href='homepage.html'">
+            <img src="/images/logaout-icon.png" height="20" cla
+            ss="hover" onclick="location.href='index.html'">
+        </div>
+        <div class="container-boletim">                    
+            <div class="content-center-barra" style="border-radius: 6px; margin-left: 20px; padding-left: 20px; margin-right: 20px; background-color: #367fb0;">
+                <span style="color: rgb(255, 243, 243); font-size: 24px;">Olá, <%= aluno.dados_pessoais.nome %></span>
+                
+                    <table style="text-align: center; overflow-x:auto;"width="800px;">
+                        <tr>
+                            <th style="width: 1%">Instituição</th>
+                            <th style="width: 1%">CGM</th>
+                            <th style="width: 1%">Curso</th>
+                            <th style="width: 1%">Série</th>
+                            <th style="width: 1%">Turno</th>
+                            <th style="width: 1%">Turma</th>
+                        </tr>
+                        <tr>
+                            <td style="width: 1%"><%= aluno.dados_pessoais.instituicao %></td>
+                            <td style="width: 1%"><%= aluno.dados_pessoais.cgm %></td>
+                            <td style="width: 1%"><%= aluno.dados_pessoais.curso %></td>
+                            <td style="width: 1%"><%= aluno.dados_pessoais.serie %></td>                            
+                            <td style="width: 1%"><%= aluno.dados_pessoais.turno %></td>
+                            <td style="width: 1%"><%= aluno.dados_pessoais.turma %></td>
+                        </tr>
+                    </table>
+        
+            </div>
+
+            <div style="margin-left:50px; margin-top:25px; color: aliceblue; font-family: 'Roboto';">
+                <span style="font-size: 48px;">Boletim</span>
+            </div>
+            <div class="content-center-no-shadow">
+                <div class="content-center" style="border-radius: 8px; font-size: 20px; color: aliceblue; margin-left:25px; margin-right: 25px; margin-top: 25px; background-color: rgb(87, 86, 86); height: 52vh; width: 100vw;">
+                    <table width="1550px" height="500px;" style="text-align: center;">
+                        <tr>
+                            <th style="width: 1%">#</th>
+                            <th style="width: 1%">Disciplinas</th>
+                            <th style="width: 1%">BM1</th>
+                            <th style="width: 1%">frequência </th>
+                            <th style="width: 1%">BM2</th>
+                            <th style="width: 1%">frequência </th>
+                            <th style="width: 1%">BM3</th>
+                            <th style="width: 1%">frequência </th>
+                            <th style="width: 1%">BM4</th>
+                            <th style="width: 1%">frequência </th>
+                            <th style="width: 1%">Situação</th>
+                        </tr>
+                        <% aluno.boletim.forEach((materia) => { %> 
+                        <tr> 
+                            <td>1</td>
+                            <td><%= materia.nome %></td>
+                            <td><%= materia.b1.nota %></td>
+                            <td><%= materia.b1.frequencia %></td>
+                            <td><%= materia.b2.nota %></td>
+                            <td><%= materia.b1.frequencia %></td>
+                            <td><%= materia.b3.nota %></td>
+                            <td><%= materia.b1.frequencia %></td>
+                            <td><%= materia.b4.nota %></td>
+                            <td><%= materia.b1.frequencia %></td>
+                            <% let total = (materia.b1.nota + materia.b2.nota + materia.b3.nota + materia.b4.nota) / 4
+                            if (total >= 6) { %> 
+                            <td style="color: rgb(64, 246, 88);">Aprovado</td>
+                            <% } else { console.log("reprovado")%>
+                            <td style="color: rgb(241, 55, 55);">Reprovado</td>
+                            <% } %>
+                            <% }) %>
+                    </table>
+                </div>
+            </div>
+            <div class="content-center-no-shadow">
+                <div class="content-center hover" onclick="location.href='/images/printPage.pdf'" style="margin-top:50px; width: 150px; border-radius:5px; height: 50px; background-color: #367fb0;">
+                    <span style="font-weight: bold; font-size: 18px;">
+                        Baixar boletim
+                    </span>
+                </div>   
+            </div>
+        </div>
+    </body>
+</html>
