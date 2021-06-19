@@ -168,6 +168,7 @@ routes.get("/homepage.html", (req, res) => res.render(views + "homepage", { alun
 routes.get("/recoverPassword.html", (req, res) => res.render(views + "recoverPassword"))
 routes.post("/recoverPassword", (req, res) => {
     const celular = req.body
+    console.log(celular)
     res.redirect("/")
 })
 

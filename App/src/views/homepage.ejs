@@ -20,6 +20,7 @@
             background-color:rgb(56, 56, 56);
         }
         .cabecalho{
+            z-index: 30;
             padding-right: 20px;
             background-color: #0a4261;
             box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
@@ -72,6 +73,19 @@
             align-items:center;
             align-content:center;
         }
+       .responsive-table{
+            text-align: center;
+            display: block;
+            position: relative;
+        }
+        .box-boletim{
+            border-radius: 8px; 
+            font-size: 20px; 
+            color: aliceblue; 
+            margin-top: 25px; 
+            width: 96%;
+            background-color: rgb(87, 86, 86);
+        }
     </style>
     <body>
         <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -84,7 +98,7 @@
             <div class="content-center-barra" style="border-radius: 6px; margin-left: 20px; padding-left: 20px; margin-right: 20px; background-color: #367fb0;">
                 <span style="color: rgb(255, 243, 243); font-size: 24px;">Olá, <%= aluno.dados_pessoais.nome %></span>
                 
-                    <table style="text-align: center; overflow-x:auto;"width="800px;">
+                    <table class="responsive-table" stylle="text-align: center; overflow-x:auto;"width="800px;">
                         <tr>
                             <th style="width: 1%">Instituição</th>
                             <th style="width: 1%">CGM</th>
@@ -109,20 +123,20 @@
                 <span style="font-size: 48px;">Boletim</span>
             </div>
             <div class="content-center-no-shadow">
-                <div class="content-center" style="border-radius: 8px; font-size: 20px; color: aliceblue; margin-left:25px; margin-right: 25px; margin-top: 25px; background-color: rgb(87, 86, 86); height: 52vh; width: 100vw;">
-                    <table width="1550px" height="500px;" style="text-align: center;">
+                <div class="content-center box-boletim" >
+                    <table width="70%" height="400px;">
                         <tr>
-                            <th style="width: 1%">#</th>
-                            <th style="width: 1%">Disciplinas</th>
-                            <th style="width: 1%">BM1</th>
-                            <th style="width: 1%">frequência </th>
-                            <th style="width: 1%">BM2</th>
-                            <th style="width: 1%">frequência </th>
-                            <th style="width: 1%">BM3</th>
-                            <th style="width: 1%">frequência </th>
-                            <th style="width: 1%">BM4</th>
-                            <th style="width: 1%">frequência </th>
-                            <th style="width: 1%">Situação</th>
+                            <th>#</th>
+                            <th>Disciplinas</th>
+                            <th>BM1</th>
+                            <th>frequência </th>
+                            <th>BM2</th>
+                            <th>frequência </th>
+                            <th>BM3</th>
+                            <th>frequência </th>
+                            <th>BM4</th>
+                            <th>frequência </th>
+                            <th>Situação</th>
                         </tr>
                         <% aluno.boletim.forEach((materia) => { %> 
                         <tr> 
@@ -147,7 +161,7 @@
                 </div>
             </div>
             <div class="content-center-no-shadow">
-                <div class="content-center hover" onclick="location.href='/images/printPage.pdf'" style="margin-top:50px; width: 150px; border-radius:5px; height: 50px; background-color: #367fb0;">
+                <div class="content-center hover" onclick="location.href='/images/printPage.pdf'" style="margin-top:20px; margin-top:40px; width: 150px; border-radius:5px; height: 50px; background-color: #367fb0;">
                     <span style="font-weight: bold; font-size: 18px;">
                         Baixar boletim
                     </span>
